@@ -16,19 +16,14 @@ pacman -S python python-pip brotli lz4
 pip install backports.lzma protobuf pycrypto
 ```
 ### For "rename" and "mpack" you need to manually clone and install the packages
-- rename
 ```bash
-git clone https://aur.archlinux.org/rename.git
-cd rename 
-makepkg -Acs
-sudo pacman -U rename-1.3-7-x86_64.pkg.tar.xz
-```
-- mpack
-```bash
-git clone https://aur.archlinux.org/mpack.git
-cd mpack
-makepkg -Acs
-sudo pacman -U mpack-1.6-4-x86_64.pkg.tar.xz
+for package in mpack rename; do
+    git clone https://aur.archlinux.org/"${package}"
+    cd "${package}" || continue
+    makepkg -si --skippgpcheck
+    cd - || break
+    rm -rf "${package}"
+done
 ```
 ## Mac
 ```bash
