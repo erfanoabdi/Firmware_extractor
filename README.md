@@ -5,13 +5,13 @@
 - lz4
 ## Linux
 ```bash
-apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller rename
+apt install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename
 apt install liblzma-dev python-pip brotli lz4
 pip install backports.lzma protobuf pycrypto
 ```
 ## Arch
 ```bash
-pacman -S unace unrar zip unzip p7zip sharutils uudeview arj cabextract file-roller
+pacman -S unace unrar zip unzip p7zip sharutils uudeview arj cabextract
 pacman -S python python-pip brotli lz4
 pip install backports.lzma protobuf pycrypto
 ```
