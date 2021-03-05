@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+shopt -s expand_aliases
 
 # Supported Firmwares:
 # Aonly OTA
@@ -20,6 +21,13 @@
 # kdz
 # RUU
 
+if [ $(uname) == Darwin ]; then
+    alias sed=gsed
+    alias tr=gtr
+    alias grep=ggrep
+    alias find=gfind
+fi
+    
 superimage() {
     if [ -f super.img ]; then
         echo "Creating super.img.raw ..."
